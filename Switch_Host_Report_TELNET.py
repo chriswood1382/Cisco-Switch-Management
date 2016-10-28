@@ -534,7 +534,7 @@ def show_host(ip_dict, user_name_dns, my_pass_dns):
 ###########################################################################################################################
 def write_config(telnet_conn, switch_name):
 
-    path = 'I:\Technical Services\Data Communications\Python_Scripts\Switch_Config_Files'
+    path = 'I:\Python_Scripts\Switch_Config_Files'
     
     #Create filename from host name
     filename = switch_name.upper() + '_config.txt'
