@@ -141,7 +141,7 @@ def send_command(ssh_conn, switch_model, host_name, command):
             
             print ('\nCommand sent to Switch: %s' % (command))
             
-            print(ssh_conn.send_command_expect('write memory'))
+            print(ssh_conn.send_command_expect('copy running-config startup-config'))
             
                                                        
         else:
@@ -154,7 +154,6 @@ def send_command(ssh_conn, switch_model, host_name, command):
             #send command to traverse to member switch
             ssh_conn.send_command(client_num)
             
-            #####Call model and show command functions again to check version against each switch in the cluster######
              
             switch_model = show_version(ssh_conn)
               
@@ -163,7 +162,7 @@ def send_command(ssh_conn, switch_model, host_name, command):
             ssh_conn.send_config_set(command)
             print ('\nCommand sent to Switch: %s' % command)
            
-            print(ssh_conn.send_command_expect('write memory'))
+            print(ssh_conn.send_command_expect('copy running-config startup-config'))
                      
             #Exit out of member switch
             ssh_conn.send_command("exit")
@@ -269,9 +268,7 @@ def main():
     user_name_sw = raw_input("Enter User Name for Switches/Routers: ")
     my_pass_sw = getpass()
 
-    user_name_dns = raw_input("\n\nEnter User Name for DNS Server: ")
-    my_pass_dns = getpass()
-    
+
     #open switch inventory file
     f = open('Switch_Inventory_temp.txt', "r")
     
