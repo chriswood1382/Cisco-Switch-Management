@@ -200,7 +200,7 @@ def interface_status(ssh_conn):
 ###########################################################################################################################
 def write_config(ssh_conn, switch_name):
     
-    path = 'I:\Technical Services\Data Communications\Python_Scripts\Switch_Config_Files'
+    path = 'I:\Python_Scripts\Switch_Config_Files'
     
     #Create filename from host name
     filename = switch_name.upper() + '_config.txt'
