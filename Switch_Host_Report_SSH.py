@@ -364,7 +364,7 @@ def find_router(ssh_conn):
 
     temp1, temp2, router = show_conf.split()
      
-   # router = "130.189.236.1"
+   
     print '\nThe router is: %s\n\n' % router
          
     return router    
