@@ -519,7 +519,7 @@ def write_config(ssh_conn, switch_name):
 ###########################################################################################################################
 def write_dict(host_name, host_dict):
 
-    path = 'I:\Technical Services\Data Communications\Python_Scripts\Switch_Report_Output'
+    path = 'I:\Python_Scripts\Switch_Report_Output'
     
     #Create filename from host name
     filename = host_name.upper() + '_HostList.csv'
